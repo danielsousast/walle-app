@@ -1,26 +1,20 @@
 import React from 'react';
 
-import { View, Text } from 'react-native';
+import { View, Text, useColorScheme } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from '../presentation/global/theme';
+import Home from '../presentation/screens/Home';
 
 // import { Container } from './styles';
 
 const App: React.FC = () => {
+  const deviceTheme = useColorScheme();
+  const theme = deviceTheme && deviceTheme === 'dark' ? darkTheme : lightTheme;
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 30,
-        }}
-      >
-        Welcome to Walle
-      </Text>
-    </View>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 };
 
