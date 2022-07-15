@@ -6,6 +6,8 @@ export type MyTheme = {
     text: string;
     textDark: string;
     textLight: string;
+    green: string;
+    red: string;
   };
 };
 
@@ -17,6 +19,8 @@ export const lightTheme = {
     text: '#3A4276',
     textDark: '#1B1D28',
     textLight: '#7B7F9E',
+    green: '#2CB751',
+    red: '#FF4840',
   },
   fonts: {},
 };
@@ -29,6 +33,8 @@ export const darkTheme = {
     text: '#7B7F9E',
     textDark: '#FFFFFF',
     textLight: '#7B7F9E',
+    green: '#2CB751',
+    red: '#FF4840',
   },
   fonts: {},
 };
