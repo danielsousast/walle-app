@@ -6,9 +6,16 @@ export const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const Content = styled.View`
+export const Content = styled.ScrollView`
   flex: 1;
   padding: 16px;
+`;
+
+export const Logo = styled.Image.attrs({
+  resizeMode: 'contain',
+})`
+  width: 35%;
+  height: 40px;
 `;
 
 export const HomeHeader = styled.View`
@@ -28,3 +35,9 @@ export const MenuIcon = styled(AntDesign).attrs(({ theme }) => ({
   color: theme.colors.textLight,
   size: 24,
 }))``;
+
+export const ServiceScroll = styled.ScrollView.attrs({
+  horizontal: true,
+})`
+  margin-top: 16px;
+`;

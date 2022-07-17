@@ -1,29 +1,24 @@
 import React from 'react';
 import BalanceCard from '../../components/BalanceCard';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 import {
   Container,
   Content,
+  Logo,
   MenuIcon,
   MenuIconButton,
   HomeHeader,
+  ServiceScroll,
 } from './styles';
 import { SectionTitle } from '../../components/Shared/Typography';
-import { Image } from 'react-native';
+import ServiceCard from '../../components/ServiceCard';
+import TransactionsList from '../../components/TransactionsList';
 
 const Home: React.FC = () => {
   return (
     <Container>
       <HomeHeader>
-        <Image
-          source={require('../../assets/logo.png')}
-          resizeMode="contain"
-          style={{
-            width: 140,
-            height: 40,
-          }}
-        />
+        <Logo source={require('../../assets/logo.png')} />
         <MenuIconButton>
           <MenuIcon />
         </MenuIconButton>
@@ -31,6 +26,14 @@ const Home: React.FC = () => {
       <Content>
         <SectionTitle>Account Overview</SectionTitle>
         <BalanceCard />
+        <SectionTitle style={{ marginTop: 32 }}>Quick Access</SectionTitle>
+        <ServiceScroll>
+          <ServiceCard title="Transactions" icon="transaction" />
+          <ServiceCard title="Accounts" icon="bank" />
+          <ServiceCard title="Categories" icon="category" />
+        </ServiceScroll>
+        <SectionTitle style={{ marginTop: 32 }}>Last Trasactions</SectionTitle>
+        <TransactionsList />
       </Content>
     </Container>
   );

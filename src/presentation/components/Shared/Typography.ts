@@ -5,3 +5,9 @@ export const SectionTitle = styled.Text`
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
 `;
+
+export const Label = styled.Text`
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: ${({ theme }) => theme.colors.text};
+`;
